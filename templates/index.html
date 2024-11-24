@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video To MP3 Converter</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #1e90ff;
+        }
+        .upload-box {
+            border: 2px dashed #1e90ff;
+            padding: 20px;
+            width: 50%;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .upload-box.dragover {
+            background-color: #1e1e1e;
+        }
+        .upload-box input {
+            display: none;
+        }
+        .upload-box label {
+            color: #1e90ff;
+            cursor: pointer;
+        }
+        .history {
+            width: 50%;
+            margin-top: 20px;
+        }
+        .history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .history th, .history td {
+            border: 1px solid #ffffff;
+            padding: 8px;
+            text-align: left;
+        }
+        .history th {
+            background-color: #333333;
+        }
+        .history td a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .history td a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video To MP3 Converter</h1>
+
+    <div class="upload-box" id="upload-box">
+        <label for="file-upload">Drag and drop a file here or click to upload</label>
+        <p> Supported video formats: MP4, MKV, AVI, MOV, FLV, MPG,</p>
+        <input id="file-upload" type="file" accept="*/*">
+    </div>
+
+    <div class="history">
+        <h2>Conversion History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Original File</th>
+                    <th>Converted File</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in history %}
+                <tr>
+                    <td>{{ entry.original_file }}</td>
+                    <td>{{ entry.converted_file }}</td>
+                    <td><a href="/download/{{ entry.converted_file }}">Download</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const uploadBox = document.getElementById('upload-box');
+        const fileInput = document.getElementById('file-upload');
+
+        // Handle drag and drop
+        uploadBox.addEventListener('dragover', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadBox.classList.add('dragover');
+        });
+
+        uploadBox.addEventListener('dragleave', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadBox.classList.remove('dragover');
+        });
+
+        uploadBox.addEventListener('drop', async (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            uploadBox.classList.remove('dragover');
+
+            const file = event.dataTransfer.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Conversion successful! Check the history for your file.');
+                    window.location.reload();
+                } else {
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
+                alert('An error occurred while uploading the file.');
+            }
+        });
+
+        // Handle file selection via input
+        fileInput.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Conversion successful! Check the history for your file.');
+                    window.location.reload();
+                } else {
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
+                alert('An error occurred while uploading the file.');
+            }
+        });
+    </script>
+</body>
+</html>

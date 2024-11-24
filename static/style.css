@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+    background-color: #000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #f05454;
+}
+
+.logo img.large-logo {
+    width: 200px; /* Adjusted size for larger logo */
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #f05454;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f05454;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #f05454;
+    border-bottom: 1px solid #f05454;
+    padding-bottom: 5px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #292929;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: #f5f5f5;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+tr:hover {
+    background-color: #3a3a3a;
+}
+
+button {
+    background-color: #f05454;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #c44545;
+}
+
+/* Form Styles */
+form {
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Custom style for date input with larger white calendar icon */
+input[type="date"] {
+    appearance: none; /* Removes the default date picker icon on some browsers */
+    background-image: url("../static/calendar-icon-white.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px 24px; /* Adjusts the icon size */
+    padding-right: 40px; /* Adds space for the icon */
+    color: #f5f5f5; /* White text */
+    font-size: 16px; /* Larger text */
+    border: 1px solid #f05454; /* Matches primary accent color */
+    border-radius: 5px;
+    background-color: #2c2c2c; /* Matches input background */
+}
+
+/* Additional styling for date input on hover and focus */
+input[type="date"]:hover,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #f5f5f5; /* Highlighted border on hover/focus */
+}
+
+input[type="submit"] {
+    background-color: #f05454;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #c44545;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    padding: 10px;
+    text-align: center;
+    border-top: 2px solid #f05454;
+}
+
+footer p {
+    margin: 0;
+    color: #f5f5f5;
+}
+
+/* Links */
+a {
+    color: #f05454;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styling */
+header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f05454;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img.large-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #f05454;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #f5f5f5;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f05454;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button[type="submit"]:last-child {
+    background-color: #f44336; /* Red for delete */
+}
+
+button[type="submit"]:last-child:hover {
+    background-color: #d32f2f;
+}
+/* Styles for Edit button */
+.edit-button {
+    background-color: #2196F3; /* Blue color */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.edit-button:hover {
+    background-color: #1E88E5; /* Lighter blue on hover */
+}
+.form-container {
+    max-width: 400px; /* Adjust based on your layout */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9; /* Background color for the form */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #007bff; /* Button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Button hover color */
+}
+
+.messages {
+    margin-top: 15px;
+    color: red; /* Change to a suitable color based on your theme */
+}
+.form-container {
+    max-width: 400px; /* Adjust based on your layout */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #2b2b2b; /* Dark grey color */
+    color: white; /* Change text color to white for better visibility */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #555; /* Darker border color */
+    border-radius: 4px;
+    background-color: #444; /* Dark input background */
+    color: white; /* White text color for inputs */
+}
+
+.form-group input::placeholder {
+    color: #aaa; /* Lighter placeholder color */
+}
+
+.btn {
+    background-color: #007bff; /* Button color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Button hover color */
+}
+
+.messages {
+    margin-top: 15px;
+    color: red; /* Change to a suitable color based on your theme */
+}
