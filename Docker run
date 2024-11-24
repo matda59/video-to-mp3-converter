@@ -1,0 +1,13 @@
+docker run
+  -d
+  --name='video-to-mp3-converter'
+  --net='bridge'
+  --pids-limit 2048
+  -e TZ="Australia/Sydney"
+  -e HOST_OS="Unraid"
+  -e HOST_HOSTNAME="Tower"
+  -e HOST_CONTAINERNAME="video-to-mp3-converter"
+  -l net.unraid.docker.managed=dockerman
+  -l net.unraid.docker.webui='http://192.168.0.71:5577'
+  -l net.unraid.docker.icon='http://matathome.com/wp-content/uploads/2022/04/mp3.jpg'
+  -p '5577:5577/tcp' 'video-to-mp3-converter'
