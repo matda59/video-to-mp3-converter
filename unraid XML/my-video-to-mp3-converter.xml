@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>video-to-mp3-converter</Name>
+  <Repository>video-to-mp3-converter</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview> A basic Drag and drop enabled self hosted docker container to convert video files audio to MP3 with the ability to download. supports FLV,MPEG,AVI,MP4</Overview>
+  <Category/>
+  <WebUI>http://192.168.0.71:5577</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/matda59/video-to-mp3-converter/refs/heads/main/templates/assets/12.jpg</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1732504206</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="webui" Target="5577" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">5577</Config>
+</Container>
