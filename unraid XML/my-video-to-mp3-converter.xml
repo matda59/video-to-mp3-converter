@@ -11,7 +11,7 @@
   <Project/>
   <Overview> A basic Drag and drop enabled self hosted docker container to convert video files audio to MP3 with the ability to download. supports FLV,MPEG,AVI,MP4</Overview>
   <Category/>
-  <WebUI>http://192.168.0.71:5577</WebUI>
+  <WebUI>http://[IP]:[PORT:5577]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/matda59/video-to-mp3-converter/refs/heads/main/templates/assets/12.jpg</Icon>
   <ExtraParams/>
