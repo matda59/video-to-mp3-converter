@@ -1,6 +1,7 @@
 # video-to-mp3-converter
 A basic Drag and drop enabled self hosted docker container to convert video files audio to MP3 with the ability to download.
 supports FLV,MPEG,AVI,MP4
+Uses port 5577 by default
 
 docker pull matda59/video-to-mp3-converter:latest
 
