@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  video-to-mp3-converter:
+    image: matda59/video-to-mp3-converter:latest
+    container_name: video-to-mp3-converter
+    environment:
+      - HOST_CONTAINERNAME=video-to-mp3-converter
+    labels:
+      net.unraid.docker.managed: "dockerman"
+      net.unraid.docker.webui: "http://[IP]:[PORT:5577]"
+      net.unraid.docker.icon: "https://raw.githubusercontent.com/matda59/video-to-mp3-converter/refs/heads/main/templates/assets/12.jpg"
+    ports:
+      - "5577:5577"
+    deploy:
+      resources:
+        limits:
+          pids: 2048
+    networks:
+      - bridge
+networks:
+  bridge:
+    driver: bridge
