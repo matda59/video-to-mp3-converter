@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>video-to-mp3-converter</Name>
-  <Repository>video-to-mp3-converter</Repository>
+  <Repository>matda59/video-to-mp3-converter:latest</Repository>
   <Registry/>
   <Network>bridge</Network>
   <MyIP/>
