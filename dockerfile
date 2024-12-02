@@ -12,9 +12,12 @@ COPY . /app
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gunicorn
 
 # Expose the port the app runs on
 EXPOSE 5577
 
 # Run the application
-CMD ["python", "app.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:5577", "--timeout", "120", "--workers", "4", "--threads", "2", "app:app"]
+
+
